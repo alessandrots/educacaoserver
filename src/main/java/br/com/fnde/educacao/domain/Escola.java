@@ -10,6 +10,8 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.Generated;
 import org.hibernate.annotations.GenerationTime;
 
+import java.math.BigDecimal;
+
 @Entity 
 @Table(name="escola")
 public class Escola implements Domain {
@@ -32,6 +34,13 @@ public class Escola implements Domain {
 
 	@Transient
 	private Long distancia;
+
+
+	@Column(name="numlatitude")
+	private BigDecimal numLatitude;
+	
+	@Column(name="numlongitude")
+	private BigDecimal numLongitude;
 
 	public Long getDistancia() {
 		return distancia;
@@ -72,6 +81,19 @@ public class Escola implements Domain {
 		this.txImagem = txImagem;
 	}
 	
+	public BigDecimal getNumLatitude() {
+		return numLatitude;
+	}
+	public void setNumLatitude(BigDecimal numLatitude) {
+		this.numLatitude = numLatitude;
+	}
+	public BigDecimal getNumLongitude() {
+		return numLongitude;
+	}
+	public void setNumLongitude(BigDecimal numLongitude) {
+		this.numLongitude = numLongitude;
+	}
+
 	
 	
 }
